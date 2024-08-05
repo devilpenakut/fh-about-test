@@ -17,11 +17,11 @@ def BstPage(selidx, title, *c):
                 Icon('fab fa-github', dark=False, sz='lg', href=ghurl, cls='ms-2 px-2'))
     footer_content = Div(
         Div(
-            Div("devilpenakut", cls="col-6 text-start"),
-            Div("Powered by Ghost", cls="col-6 text-end"),
+            Div(H3("devilpenakut", cls="fw-bold mb-0"), cls="col-6 text-start"),
+            Div(A("Powered by FastHTML", href="https://about.fastht.ml/", cls="text-decoration-none"), cls="col-6 text-end"),
             cls="row"
         ),
-        cls="container-fluid py-3"
+        cls="container-fluid py-3 bg-light"
     )
     
     return (
