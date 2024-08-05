@@ -10,8 +10,8 @@ fhurl = 'https://fastht.ml'
 docs = 'https://docs.fastht.ml'
 
 def BstPage(selidx, title, *c):
-    navitems = [('About', '/'), ('Vision', '/vision'), ('Foundations', '/foundation'),
-                ('Technology', '/tech'), ('Components', '/components'), ('Limits', '#', {'disabled':True})]
+    navitems = [('About', '/'), ('Vision', '/vision', {'disabled':True}), ('Foundations', '/foundation', {'disabled':True}),
+                ('Technology', '/tech', {'disabled':True}), ('Components', '/components', {'disabled':True}), ('Limits', '#', {'disabled':True})]
     logo = 'assets/logo.svg'
     ra_items = (A('Docs', href=docs, cls="nav-link"),
                 Icon('fab fa-github', dark=False, sz='lg', href=ghurl, cls='ms-2 px-2'))
