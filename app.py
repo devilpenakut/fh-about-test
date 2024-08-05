@@ -15,8 +15,15 @@ def BstPage(selidx, title, *c):
     logo = 'assets/logo.svg'
     ra_items = (A('Docs', href=docs, cls="nav-link"),
                 Icon('fab fa-github', dark=False, sz='lg', href=ghurl, cls='ms-2 px-2'))
-    ftlinks = [A(k, href=v, cls='nav-link px-2 text-muted')
-        for k,v in dict(Home='/', Docs=docs, Company='https://www.answer.ai').items()]
+    footer_content = Div(
+        Div(
+            Div("devilpenakut", cls="col-6 text-start"),
+            Div("Powered by Ghost", cls="col-6 text-end"),
+            cls="row"
+        ),
+        cls="container-fluid py-3"
+    )
+    
     return (
         Title(title),
         Script('initTOC()'),
@@ -24,7 +31,7 @@ def BstPage(selidx, title, *c):
             Navbar('nav', selidx, items=navitems, ra_items=ra_items, cls='navbar-light bg-secondary rounded-lg',
                 image=f'/{logo}', hdr_href=fhurl, placement=PlacementT.Default, expand=SizeT.Md, toggle_left=False),
             Toc(Container(H1(title, cls='pb-2 pt-1'), *c, cls='mt-3')),
-            BstFooter('© 2024 onwards AnswerDotAI, Inc', File(logo), img_href=fhurl, cs=ftlinks),
+            footer_content,
         typ=ContainerT.Xl, cls='mt-3', data_bs_spy='scroll', data_bs_target='#toc'))
 
 def Sections(h2s, texts):
